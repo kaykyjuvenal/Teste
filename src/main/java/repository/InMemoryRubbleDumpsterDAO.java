@@ -21,6 +21,13 @@ public class InMemoryRubbleDumpsterDAO implements RubbleDumpsterDAO {
     }
 
     @Override
+    public Optional<RubbleDumpster> findById(Integer id) {
+        if (db.containsKey(id))
+            return Optional.of(db.get(id));
+        return Optional.empty();
+    }
+
+    @Override
     public Integer create(RubbleDumpster rubbleDumpster) {
         idcounter ++;
         rubbleDumpster.setId(idcounter);

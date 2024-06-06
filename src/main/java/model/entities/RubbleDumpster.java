@@ -88,8 +88,14 @@ public class RubbleDumpster {
                 ", status: " + this.getStatus();
     }
 
-    public void rentRubbleDumpster() {}
+    public void rentRubbleDumpster(Rental rental) {
+        if (rental == null)
+            throw new IllegalArgumentException("O objeto rental não pode ser nulo!");
+        this.setRental(rental);
+        this.setStatus(RENTED);
 
+        System.out.println("O status da caçamba foi alterado e a caçamba foi alugada!");
+    }
 
 
     public void withdrawalRequest( double withdrawalAmount)  {
@@ -114,16 +120,15 @@ public class RubbleDumpster {
     public void inactivateRubbleDumpster() {
         if (this.status == RENTED && this.rental.getEndDate().isBefore(LocalDate.now())) {
             this.status = DISABLED;
-        }
-        else
-            System.out.println("Não é possível realizar a desativação pois a caçamba não está alugada");
+        } else
+            throw new IllegalArgumentException("Não é possível realizar a desativação pois a caçamba não está alugada");
     }
 
     public void activateRubbleDumpster() {
         if (this.status == WITHDRAWAL_ORDER) {
             this.status = AVAILABLE;
         } else
-            System.out.println("Para ativar a caçamba, é necessário que ela possua ordem de retirada!");
+            throw new IllegalArgumentException("O campo não está de acordo ao pré-selecionado");
     }
 }
 

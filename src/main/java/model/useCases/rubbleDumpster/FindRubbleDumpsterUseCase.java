@@ -18,7 +18,14 @@ public class FindRubbleDumpsterUseCase {
     }
 
     Validator<RubbleDumpster> validator = new RubbleDumpsterInsertValidator();
+    public Optional<RubbleDumpster> findOneById(Integer id) {
+        if (id == null)
+            throw new IllegalArgumentException("O id não pode ser nulo!");
+        if (rubbleDumpsterDAO.findById(id).isEmpty())
+            throw new EntityNotFoundException("Caçamba não localizada.");
 
+        return rubbleDumpsterDAO.findById(id);
+    }
 
     public Optional<RubbleDumpster> findOne (Integer serialNumber) {
         if (serialNumber == null)
@@ -34,7 +41,7 @@ public class FindRubbleDumpsterUseCase {
             throw new IllegalArgumentException("Status não pode ser nulo!");
 
         if (rubbleDumpsterDAO.findAll(status).isEmpty())
-            throw new EntityNotFoundException("Nenhum elemento com "+ status.toString() +" foi encontrado!");
+            throw new EntityNotFoundException("Nenhum elemento com este status foi encontrado!");
 
         return rubbleDumpsterDAO.findAll(status);
     }
@@ -43,4 +50,3 @@ public class FindRubbleDumpsterUseCase {
     }
 
 }
-
