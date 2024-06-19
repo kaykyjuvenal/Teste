@@ -70,14 +70,11 @@ public class Main {
         Client client = new Client("Kayky", address, cpf, phone2, phone1, emails, 1);
         Client client2 = new Client("Pedro", address, cpf, phone3, phone4, emails, 2);
 
-        RubbleDumpster rubbleDumpster = new RubbleDumpster(1, 50.0, 300.0, WITHDRAWAL_ORDER);
-        RubbleDumpster rubbleDumpster1 = new RubbleDumpster(2, 60.0, 200.0, RENTED);
-        RubbleDumpster rubbleDumpster4 = new RubbleDumpster(3, 70.0, 300.0, RENTED);
+        RubbleDumpster rubbleDumpster = new RubbleDumpster(1, 50.0, 300.0, DISABLED);
+        RubbleDumpster rubbleDumpster1 = new RubbleDumpster(2, 60.0, 200.0, DISABLED);
+        RubbleDumpster rubbleDumpster4 = new RubbleDumpster(3, 70.0, 300.0, AVAILABLE);
         Rental rental = new Rental(rubbleDumpster, client, LocalDate.now());
 
-        rubbleDumpster.setRental(rental);
-        rubbleDumpster1.setRental(rental);
-        rental.setFinalAmount(200.0);
 
         configureInjection();
 
@@ -97,9 +94,6 @@ public class Main {
 
         System.out.println(rubbleDumpster2);
         System.out.println(rubbleDumpster3);
-        rubbleDumpster1.setStatus(RENTED);
-        rubbleDumpster1.getRental().setEndDate(LocalDate.now());
-        //rubbleDumpster1.getRental().setEndDate(LocalDate.of(2025,  12,30));
 
         System.out.println("Disabled\n");
 
@@ -112,9 +106,6 @@ public class Main {
         System.out.println(rubbleDumpster);
         System.out.println(rubbleDumpster1);
 
-
-        rubbleDumpster.setRental(rental);
-        rental.calculateFinalAmount();
         //rubbleDumpster.activateRubbleDumpster();
         System.out.println(rubbleDumpster);
 
@@ -132,7 +123,7 @@ public class Main {
         client.setName("Caboquinho");
         updateClientUseCase.updateClient(client);
         System.out.println(client.toString());
-
+        rubbleDumpster.setStatus(DISABLED);
         //TESTE RENTAL
         activateRubbleDumpsterUseCase.activate(rubbleDumpster);
         Rental rental1 = insertRentalUseCase.insertRental(client.getId());

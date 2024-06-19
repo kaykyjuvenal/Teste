@@ -11,7 +11,6 @@ public class RubbleDumpster {
     private Double minAmount;
     private Double monthlyAmount;
     private RubbleDumpsterStatus status;
-    private Rental rental;
 
     private Integer Id;
 
@@ -53,13 +52,6 @@ public class RubbleDumpster {
 
 
 
-    public Rental getRental() {
-        return rental;
-    }
-
-    public void setRental(Rental rental) {
-        this.rental = rental;
-    }
 
     public RubbleDumpster() {
     }
@@ -77,7 +69,6 @@ public class RubbleDumpster {
         this.minAmount = minAmount;
         this.monthlyAmount = monthlyAmount;
         this.status = status;
-        this.rental = rental;
     }
 
     @Override
@@ -88,10 +79,8 @@ public class RubbleDumpster {
                 ", status: " + this.getStatus();
     }
 
-    public void rentRubbleDumpster(Rental rental) {
-        if (rental == null)
-            throw new IllegalArgumentException("O objeto rental não pode ser nulo!");
-        this.setRental(rental);
+    public void rentRubbleDumpster() {
+
         this.setStatus(RENTED);
 
         System.out.println("O status da caçamba foi alterado e a caçamba foi alugada!");
@@ -102,33 +91,23 @@ public class RubbleDumpster {
         if (withdrawalAmount <= 0){
             throw new IllegalArgumentException("O valor da ordem de retirada deve ser um valor positivo!");
         }
-        if (withdrawalAmount > this.rental.getFinalAmount()){
-            try {
-                throw new InsufficientResourcesException("O valor da ordem de retirada excede o balanço disponível!");
-            } catch (InsufficientResourcesException e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        this.rental.setFinalAmount(this.rental.getFinalAmount() - withdrawalAmount);
         this.setStatus(WITHDRAWAL_ORDER);
 
-        System.out.println("O valor final atual é de: " + this.rental.getFinalAmount());
         System.out.println("\n E o status atual da caçamba é: " + this.getStatus());
     }
 
     public void inactivateRubbleDumpster() {
-        if (this.status == RENTED && this.rental.getEndDate().isBefore(LocalDate.now())) {
+        if (this.status == AVAILABLE ) {
             this.status = DISABLED;
         } else
-            throw new IllegalArgumentException("Não é possível realizar a desativação pois a caçamba não está alugada");
+            throw new IllegalArgumentException("Não é possível realizar a desativação pois a caçamba não está ativa");
     }
 
     public void activateRubbleDumpster() {
-        if (this.status == WITHDRAWAL_ORDER) {
+        if (this.status == DISABLED) {
             this.status = AVAILABLE;
         } else
-            throw new IllegalArgumentException("O campo não está de acordo ao pré-selecionado");
+            throw new IllegalArgumentException("Não é possível realizar a ativação pois a caçamba não está desabilitada");
     }
 }
 
