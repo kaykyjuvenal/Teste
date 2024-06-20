@@ -3,8 +3,8 @@ package com.dumpRents.model.useCases.client;
 import com.dumpRents.model.Validator;
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.valueObjects.Cpf;
-import persistence.dao.ClientDAO;
-import persistence.utils.EntityAlreadyExistsException;
+import com.dumpRents.persistence.dao.ClientDAO;
+import com.dumpRents.persistence.utils.EntityAlreadyExistsException;
 
 import java.util.Collection;
 import java.util.List;

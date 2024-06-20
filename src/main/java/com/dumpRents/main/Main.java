@@ -6,22 +6,26 @@ import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.entities.Report;
 import com.dumpRents.model.entities.RubbleDumpster;
-import model.entities.valueObjects.*;
-import model.useCases.client.*;
+import com.dumpRents.model.entities.valueObjects.*;
+import com.dumpRents.model.useCases.client.*;
 import com.dumpRents.model.useCases.export.ExportCSVUseCase;
-import model.useCases.rental.*;
-import model.useCases.rubbleDumpster.*;
-import persistence.dao.ClientDAO;
-import persistence.dao.RentalDAO;
-import persistence.dao.RubbleDumpsterDAO;
-import repository.InMemoryClientDAO;
-import repository.InMemoryRentalDAO;
-import repository.InMemoryRubbleDumpsterDAO;
+import com.dumpRents.model.useCases.rental.*;
+import com.dumpRents.model.useCases.rubbleDumpster.*;
+import com.dumpRents.persistence.dao.ClientDAO;
+import com.dumpRents.persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
+import com.dumpRents.repository.inMemory.InMemoryClientDAO;
+import com.dumpRents.repository.inMemory.InMemoryRentalDAO;
+import com.dumpRents.repository.inMemory.InMemoryRubbleDumpsterDAO;
+import com.dumpRents.repository.sqlite.DatabaseBuilder;
+import com.dumpRents.repository.sqlite.DatabaseBuilder;
+
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.ServiceLoader;
 
 
 public class Main {
@@ -57,6 +61,7 @@ public class Main {
         }
 
 
+
         //Startando CLIENT
         Cpf cpf = new Cpf("39501888860");
         Phone phone1 = new Phone("16994580485");
@@ -74,8 +79,11 @@ public class Main {
         RubbleDumpster rubbleDumpster4 = new RubbleDumpster(3, 70.0, 300.0, RubbleDumpsterStatus.AVAILABLE);
         Rental rental = new Rental(rubbleDumpster, client, LocalDate.now());
 
+        // DATABASE
 
         configureInjection();
+        setupDatabase();
+        //WindowLoader.main(args);
 
         activateRubbleDumpsterUseCase.activate(rubbleDumpster);
         //activateRubbleDumpsterUseCase.activate(rubbleDumpster1);
@@ -123,6 +131,7 @@ public class Main {
         updateClientUseCase.updateClient(client);
         System.out.println(client.toString());
         rubbleDumpster.setStatus(RubbleDumpsterStatus.DISABLED);
+
         //TESTE RENTAL
         activateRubbleDumpsterUseCase.activate(rubbleDumpster);
         Rental rental1 = insertRentalUseCase.insertRental(client.getId());
@@ -168,6 +177,12 @@ public class Main {
                 .toList();
         exportCSVUseCase.export(incomeCsvFileName, incomeHeaders, incomeData);
     }
+
+    private static void setupDatabase() {
+        DatabaseBuilder  dbBuilder = new DatabaseBuilder();
+        dbBuilder.buildDatabaseIfMissing();
+    }
+
     private static void configureInjection() {
 
         RubbleDumpsterDAO rubbleDumpsterDAO =    new InMemoryRubbleDumpsterDAO();
@@ -182,7 +197,7 @@ public class Main {
         findClientUseCase =     new FindClientUseCase(clientDAO);
         updateClientUseCase =   new UpdateClientUseCase(clientDAO);
 
-        RentalDAO rentalDAO = new InMemoryRentalDAO();
+        RentalDAO rentalDAO = (RentalDAO) new InMemoryRentalDAO();
         insertRentalUseCase = new InsertRentalUseCase(rentalDAO,findRubbleDumpsterUseCase,findClientUseCase,rubbleDumpsterDAO);
         findRentalUseCase =   new FindRentalUseCase(rentalDAO);
         endRentalUseCase =    new EndRentalUseCase(rentalDAO,rubbleDumpsterDAO,findRubbleDumpsterUseCase);

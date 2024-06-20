@@ -6,9 +6,9 @@ import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.entities.RentalStatus;
 import com.dumpRents.model.entities.RubbleDumpster;
 import com.dumpRents.model.entities.RubbleDumpsterStatus;
-import persistence.dao.RentalDAO;
-import persistence.dao.RubbleDumpsterDAO;
-import persistence.utils.EntityNotFoundException;
+import com.dumpRents.persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
+import com.dumpRents.persistence.utils.EntityNotFoundException;
 
 import java.time.LocalDate;
 

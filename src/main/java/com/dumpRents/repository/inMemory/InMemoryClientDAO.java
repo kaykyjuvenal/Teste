@@ -1,9 +1,9 @@
-package com.dumpRents.repository;
+package com.dumpRents.repository.inMemory;
 
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.valueObjects.Cpf;
 import com.dumpRents.persistence.dao.ClientDAO;
-import persistence.dao.ClientDAO;
+import com.dumpRents.persistence.dao.ClientDAO;
 import java.util.*;
 
 public class InMemoryClientDAO implements ClientDAO {

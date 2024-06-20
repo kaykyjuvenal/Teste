@@ -5,8 +5,8 @@ import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.entities.RentalStatus;
 import com.dumpRents.model.entities.RubbleDumpster;
 import com.dumpRents.persistence.utils.DAO;
-import model.entities.*;
-import persistence.utils.DAO;
+import com.dumpRents.model.entities.*;
+import com.dumpRents.persistence.utils.DAO;
 
 import java.time.LocalDate;
 import java.util.List;

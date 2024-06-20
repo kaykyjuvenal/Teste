@@ -3,12 +3,13 @@ package com.dumpRents.model.useCases.rental;
 import com.dumpRents.model.Notification;
 import com.dumpRents.model.Validator;
 import com.dumpRents.model.useCases.rubbleDumpster.FindRubbleDumpsterUseCase;
-import model.entities.*;
+import com.dumpRents.model.entities.*;
 import com.dumpRents.model.useCases.client.FindClientUseCase;
-import persistence.dao.ClientDAO;
-import persistence.dao.RentalDAO;
-import persistence.dao.RubbleDumpsterDAO;
-import persistence.utils.EntityNotFoundException;
+import com.dumpRents.persistence.dao.ClientDAO;
+import com.dumpRents.persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
+import com.dumpRents.persistence.utils.EntityNotFoundException;
+
 
 import java.time.LocalDate;
 

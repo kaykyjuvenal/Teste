@@ -3,7 +3,7 @@ package com.dumpRents.model.useCases.rental;
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.exceptions.DataAccessException;
-import persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RentalDAO;
 
 import java.time.LocalDate;
 import java.util.Collection;

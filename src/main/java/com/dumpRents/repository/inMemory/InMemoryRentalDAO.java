@@ -1,10 +1,10 @@
-package com.dumpRents.repository;
+package com.dumpRents.repository.inMemory;
 
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.entities.RentalStatus;
 import com.dumpRents.model.entities.RubbleDumpster;
-import persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RentalDAO;
 
 import java.time.LocalDate;
 import java.util.*;

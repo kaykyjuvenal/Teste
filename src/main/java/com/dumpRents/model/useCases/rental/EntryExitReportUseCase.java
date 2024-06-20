@@ -2,7 +2,7 @@ package com.dumpRents.model.useCases.rental;
 
 import com.dumpRents.model.entities.Rental;
 import com.dumpRents.model.entities.Report;
-import persistence.dao.RentalDAO;
+import com.dumpRents.persistence.dao.RentalDAO;
 
 import java.time.LocalDate;
 import java.util.List;

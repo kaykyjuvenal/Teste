@@ -1,9 +1,8 @@
-package com.dumpRents.repository;
+package com.dumpRents.repository.inMemory;
 
 import com.dumpRents.model.entities.RubbleDumpster;
 import com.dumpRents.model.entities.RubbleDumpsterStatus;
 import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
-import persistence.dao.RubbleDumpsterDAO;
 
 import java.util.*;
 import java.util.stream.Collectors;

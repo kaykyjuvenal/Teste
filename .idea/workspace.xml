@@ -5,73 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/rentalManagementUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/rentalUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/reportUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/rubbleDumpsterManagementUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/rubbleDumpsterUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste" beforeDir="false" afterPath="$PROJECT_DIR$/Teste" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teste/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/view/rubbledumpsterrental/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/view/rubbledumpsterrental/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/RentalStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RentalStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/RubbleDumpster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/RubbleDumpsterStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpsterStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/valueObjects/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/valueObjects/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/valueObjects/Cep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/valueObjects/Cep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/valueObjects/Cpf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/valueObjects/Cpf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/valueObjects/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/valueObjects/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entities/valueObjects/Phone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/valueObjects/Phone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/DataAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/exceptions/DataAccessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/exceptions/RentalNotAllowedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/exceptions/RentalNotAllowedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/client/ClientInsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/ClientInsertValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/client/FindClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/FindClientUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/client/InsertClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/InsertClientUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/client/UpdateClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/UpdateClientUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/export/ExportCSVUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/export/ExportCSVUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/EndRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EndRentalUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/EntryAndReportValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EntryAndReportValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/EntryExitReportUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EntryExitReportUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/FindRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/FindRentalUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/IncomeReportUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/IncomeReportUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/InsertRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/InsertRentalUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/RentalInsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/RentalInsertValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rental/WithdrawalRequestUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/WithdrawalRequestUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/ActivateRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/ActivateRubbleDumpsterUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/FindRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/FindRubbleDumpsterUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/InactivateRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InactivateRubbleDumpsterUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/InsertRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InsertRubbleDumpsterUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/RubbleDumpsterInsertValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/RubbleDumpsterInsertValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/useCases/rubbleDumpster/UpdateRubbleDumpsterRentalPriceUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/UpdateRubbleDumpsterRentalPriceUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/ClientDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/RentalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RentalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/dao/RubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RubbleDumpsterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/utils/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/utils/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/utils/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/DatabaseBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/utils/EntityAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/EntityAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/utils/EntityNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/EntityNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InMemoryClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryClientDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InMemoryRentalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryRentalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/InMemoryRubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryRubbleDumpsterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/view/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/view/rubbledumpsterrental/clientManagementUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/clientManagementUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/view/rubbledumpsterrental/clientUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/clientUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/view/rubbledumpsterrental/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dumpRents/view/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/FindClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/FindClientUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/InsertClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/InsertClientUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/UpdateClientUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/client/UpdateClientUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/InsertRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/InsertRentalUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InactivateRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InactivateRubbleDumpsterUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InsertRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/InsertRubbleDumpsterUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/UpdateRubbleDumpsterRentalPriceUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/UpdateRubbleDumpsterRentalPriceUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RentalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RentalDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RubbleDumpsterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/utils/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/inMemory/InMemoryClientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryRentalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/inMemory/InMemoryRentalDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/InMemoryRubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/inMemory/InMemoryRubbleDumpsterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
-    <list id="58600561-f8ae-40aa-9aea-4eccca462588" name="Changes by waleska.ziviani_altb" comment="" />
+    <list id="27c118a5-4192-404d-91b5-d9ee41dabfac" name="Changes by waleska.ziviani_altb" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EndRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EndRentalUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EntryExitReportUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EntryExitReportUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/FindRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/FindRentalUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/IncomeReportUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/IncomeReportUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/WithdrawalRequestUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/WithdrawalRequestUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/ActivateRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/ActivateRubbleDumpsterUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/FindRubbleDumpsterUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rubbleDumpster/FindRubbleDumpsterUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/ClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/ClientDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,6 +63,21 @@
     &quot;accountId&quot;: &quot;7bf51917-b654-469d-8ca1-644e406b4f1f&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java">
+      <ranges>
+        <range start1="8" end1="10" start2="8" end2="10" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="11" end1="19" start2="11" end2="22" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="24" end1="24" start2="27" end2="28" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="57" end1="57" start2="61" end2="62" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="76" end1="76" start2="81" end2="82" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="78" end1="78" start2="84" end2="86" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="125" end1="125" start2="133" end2="134" changelist="27c118a5-4192-404d-91b5-d9ee41dabfac" />
+        <range start1="170" end1="170" start2="179" end2="185" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="184" end1="185" start2="199" end2="200" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+      </ranges>
+    </file>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -110,6 +100,12 @@
     "Application.Main (3).executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Unnamed.executor": "Run",
+    "Application.com.dumpRents.dumpRents.main.Main.executor": "Run",
+    "Application.com.dumpRents.main.Main (2).executor": "Run",
+    "Application.com.dumpRents.main.Main (3).executor": "Run",
+    "Application.com.dumpRents.main.Main (4).executor": "Run",
+    "Application.com.dumpRents.main.Main (5).executor": "Run",
+    "Application.com.dumpRents.main.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -125,8 +121,13 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -144,7 +145,7 @@
       <recent name="com" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.dumpRents.dumpRents.main.Main">
+  <component name="RunManager" selected="Application.com.dumpRents.main.Main (5)">
     <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -219,6 +220,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.dumpRents.main.Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dumpRents.main.Main" />
+      <module name="rubbleDumpsterRental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dumpRents.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.dumpRents.main.Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dumpRents.main.Main" />
+      <module name="rubbleDumpsterRental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dumpRents.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.dumpRents.main.Main (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dumpRents.main.Main" />
+      <module name="rubbleDumpsterRental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dumpRents.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.dumpRents.main.Main (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dumpRents.main.Main" />
+      <module name="rubbleDumpsterRental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dumpRents.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.dumpRents.main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.dumpRents.main.Main" />
+      <module name="rubbleDumpsterRental" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dumpRents.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="&lt;No Environment&gt;" path="">
       <method v="2" />
     </configuration>
@@ -234,14 +310,22 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.com.dumpRents.main.Main" />
+      <item itemvalue="Application.com.dumpRents.main.Main (2)" />
+      <item itemvalue="Application.com.dumpRents.main.Main (3)" />
+      <item itemvalue="Application.com.dumpRents.main.Main (4)" />
+      <item itemvalue="Application.com.dumpRents.main.Main (5)" />
       <item itemvalue="Application.com.dumpRents.dumpRents.main.Main" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.dumpRents.dumpRents.main.Main" />
-        <item itemvalue="Application.com.dumpRents.dumpRents.main.Main" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.com.dumpRents.main.Main (5)" />
+        <item itemvalue="Application.com.dumpRents.main.Main (4)" />
+        <item itemvalue="Application.com.dumpRents.main.Main (3)" />
+        <item itemvalue="Application.com.dumpRents.main.Main (2)" />
+        <item itemvalue="Application.com.dumpRents.main.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +353,8 @@
       <workItem from="1717625510934" duration="5451000" />
       <workItem from="1717632528074" duration="3285000" />
       <workItem from="1717636711298" duration="297000" />
-      <workItem from="1718830797334" duration="5251000" />
+      <workItem from="1718830797334" duration="6521000" />
+      <workItem from="1718838678854" duration="8157000" />
     </task>
     <servers />
   </component>
@@ -294,6 +379,11 @@
           <url>file://$PROJECT_DIR$/RubbleDumpsterRental/src/main/java/com/view/rubbledumpsterrental/main/Main.java</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="persistence.utils.EntityAlreadyExistsException" package="persistence.utils" />
