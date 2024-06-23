@@ -79,6 +79,13 @@ public class Client {
         this.id = id;
     }
 
+    public void addEmail(Email email) {
+        emailList.add(email);
+    }
+    public void removeEmail(Email email) {
+        emailList.remove(email);
+    }
+
     public void setEmailList(List<Email> emailList) {
         this.emailList = emailList;
     }

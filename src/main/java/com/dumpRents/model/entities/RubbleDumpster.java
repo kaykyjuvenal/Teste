@@ -76,9 +76,7 @@ public class RubbleDumpster {
     }
 
     public void rentRubbleDumpster() {
-
         this.setStatus(RENTED);
-
         System.out.println("O status da caçamba foi alterado e a caçamba foi alugada!");
     }
 
@@ -104,6 +102,13 @@ public class RubbleDumpster {
             this.status = AVAILABLE;
         } else
             throw new IllegalArgumentException("Não é possível realizar a ativação pois a caçamba não está desabilitada");
+    }
+    public void UpdateRentalPrice(Double monthlyAmount){
+        this.setMonthlyAmount(monthlyAmount);
+
+    }
+    public void activateNewRubbleDumbster(){
+        this.setStatus(AVAILABLE);
     }
 }
 
