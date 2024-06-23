@@ -60,11 +60,12 @@ public class RubbleDumpster {
         this.monthlyAmount = monthlyAmount;
         this.status = status;
     }
-    public RubbleDumpster(Integer serialNumber, Double minAmount, Double monthlyAmount, RubbleDumpsterStatus status, Rental rental) {
+    public RubbleDumpster(Integer serialNumber, Double minAmount, Double monthlyAmount, RubbleDumpsterStatus status, Integer id) {
         this.serialNumber = serialNumber;
         this.minAmount = minAmount;
         this.monthlyAmount = monthlyAmount;
         this.status = status;
+        this.Id = id;
     }
 
     @Override

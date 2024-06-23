@@ -1,3 +1,4 @@
+
 package com.dumpRents.repository.sqlite;
 
 import com.dumpRents.model.entities.Client;
@@ -11,16 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class SQLliteClienteDAO implements ClientDAO {
-    @Override
-    public Optional<Client> findByCpf(Cpf cpf) {
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<Client> findByName(String name) {
-        return Optional.empty();
-    }
+public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public Integer create(Client client) {
@@ -51,6 +43,15 @@ public class SQLliteClienteDAO implements ClientDAO {
         return null;
     }
 
+    @Override
+    public Optional<Client> findByCpf(Cpf cpf) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<Client> findByName(String name) {
+        return Optional.empty();
+    }
 
     @Override
     public Optional<Client> findOne(Integer key) {
@@ -58,20 +59,20 @@ public class SQLliteClienteDAO implements ClientDAO {
 
         return Optional.empty();
     }
-private Client resultSetEntity(ResultSet rs) throws SQLException {
-           List<Email> emails = new ArrayList<>();
-           emails.add(new Email(rs.getString("email")));
-           return new Client(rs.getString("name"),
-                   new Address(rs.getString("street"),
-                           rs.getString("district"),
-                           rs.getString("number"),
-                           rs.getString("city"),new Cep(rs.getString("cep"))),
+    private Client resultSetEntity(ResultSet rs) throws SQLException {
+        List<Email> emails = new ArrayList<>();
+        emails.add(new Email(rs.getString("email")));
+        return new Client(rs.getString("name"),
+                new Address(rs.getString("street"),
+                        rs.getString("district"),
+                        rs.getString("number"),
+                        rs.getString("city"),new Cep(rs.getString("cep"))),
 
-                   new Cpf(rs.getString("cpf")),
-                   new Phone(rs.getString("phone1")),
-                   new Phone(rs.getString("phone2")),
-                   emails,
-                   rs.getInt("ID"));
+                new Cpf(rs.getString("cpf")),
+                new Phone(rs.getString("phone1")),
+                new Phone(rs.getString("phone2")),
+                emails,
+                rs.getInt("ID"));
 
 
     }
