@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste" beforeDir="false" afterPath="$PROJECT_DIR$/Teste" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teste/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RentalStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RentalStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpsterStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpsterStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/persistence/dao/RubbleDumpsterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLliteClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +313,8 @@
       <workItem from="1717636711298" duration="297000" />
       <workItem from="1718830797334" duration="6521000" />
       <workItem from="1718838678854" duration="8762000" />
-      <workItem from="1719150441662" duration="8476000" />
+      <workItem from="1719150441662" duration="10216000" />
+      <workItem from="1719265376824" duration="1735000" />
     </task>
     <servers />
   </component>
