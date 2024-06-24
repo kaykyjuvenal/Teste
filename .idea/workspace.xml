@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="">
+    <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="Atualização">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teste" beforeDir="false" afterPath="$PROJECT_DIR$/Teste" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teste/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teste/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
     </list>
-    <list id="b5ee5654-26e2-49d5-b00b-39084b393638" name="Changes by waleska.ziviani_altb" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -317,8 +319,17 @@
       <workItem from="1718830797334" duration="6521000" />
       <workItem from="1718838678854" duration="8762000" />
       <workItem from="1719150441662" duration="10216000" />
-      <workItem from="1719265376824" duration="4710000" />
+      <workItem from="1719265376824" duration="4877000" />
     </task>
+    <task id="LOCAL-00001" summary="Atualização">
+      <option name="closed" value="true" />
+      <created>1719270586258</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719270586258</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,11 +340,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Atualização" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

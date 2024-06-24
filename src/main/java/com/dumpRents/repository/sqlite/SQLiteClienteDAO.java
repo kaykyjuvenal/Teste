@@ -170,8 +170,7 @@ public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public boolean delete(Client client) {
-
         if(client == null || client.getId() == null)
-            throw new IllegalArgumentException("Rubble dumpster and your id must be not null");
+            throw new IllegalArgumentException("Client and your id must be not null");
         return false;    }
 }
