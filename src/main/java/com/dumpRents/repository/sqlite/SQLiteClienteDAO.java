@@ -2,6 +2,7 @@
 package com.dumpRents.repository.sqlite;
 
 import com.dumpRents.model.entities.Client;
+import com.dumpRents.model.entities.RubbleDumpster;
 import com.dumpRents.model.entities.valueObjects.*;
 import com.dumpRents.persistence.dao.ClientDAO;
 
@@ -16,7 +17,7 @@ public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public Integer create(Client client) {
-        String sql = "INSERT INTO cliente (name,cpf,phone1,phone2,email,street,district,number,city,cep) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Client (name,cpf,phone1,phone2,email,street,district,number,city,cep) VALUES (?,?,?,?,?,?,?,?,?,?)";
 
         try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setString(1, client.getName());
@@ -45,20 +46,54 @@ public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public Optional<Client> findByCpf(Cpf cpf) {
-        return Optional.empty();
+
+        String sql = "SELECT * from Cliente where cpf = ?";
+        Client client= null;
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1,cpf.toString());
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()) {
+                client  = resultSetEntity(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(client);
+
     }
 
     @Override
     public Optional<Client> findByName(String name) {
-        return Optional.empty();
+        String sql = "SELECT * from Cliente where name = ?";
+        Client client= null;
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1,name);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()) {
+                client  = resultSetEntity(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(client);
     }
 
     @Override
     public Optional<Client> findOne(Integer key) {
-
-
-        return Optional.empty();
+        String sql = "SELECT * from Cliente where id = ?";
+        Client client= null;
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1,key);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()) {
+                client  = resultSetEntity(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(client);
     }
+
     private Client resultSetEntity(ResultSet rs) throws SQLException {
         List<Email> emails = new ArrayList<>();
         emails.add(new Email(rs.getString("email")));
@@ -73,26 +108,70 @@ public class SQLiteClienteDAO implements ClientDAO {
                 new Phone(rs.getString("phone2")),
                 emails,
                 rs.getInt("ID"));
-
-
     }
     @Override
     public List<Client> findAll() {
-        return List.of();
+        String sql = "SELECT * from Client";
+        List<Client> clients= new ArrayList<>();
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()) {
+                Client client = resultSetEntity(rs);
+                clients.add(client);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return clients;
     }
 
     @Override
-    public boolean update(Client type) {
+    public boolean update(Client client) {
+        String sql = "UPDATE Client set name = ?,cpf = ?,phone1 = ?,phone2 = ?,email = ?" +
+                ",street = ? ,district = ?,number = ?,city = ?,cep = ? where id = ?";
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, client.getName());
+            stmt.setString(2, client.getCpf().toString());
+            stmt.setString(3, client.getPhone1().toString());
+            stmt.setString(4, client.getPhone2().toString());
+            for (Email email : client.getEmailList()) {
+                stmt.setString(5, email.toString());
+            }
+            stmt.setString(6, client.getAddress().getStreet());
+            stmt.setString(7, client.getAddress().getDistrict());
+            stmt.setString(8, client.getAddress().getNumber());
+            stmt.setString(9, client.getAddress().getCity());
+            stmt.setString(10, client.getAddress().getCep().toString());
+            stmt.setInt(11, client.getId());
+            stmt.execute();
+
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean deleteByKey(Integer key) {
+        String sql = "DELETE FROM Client WHERE id = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1,key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Client type) {
-        return false;
-    }
+    public boolean delete(Client client) {
+
+        if(client == null || client.getId() == null)
+            throw new IllegalArgumentException("Rubble dumpster and your id must be not null");
+        return false;    }
 }

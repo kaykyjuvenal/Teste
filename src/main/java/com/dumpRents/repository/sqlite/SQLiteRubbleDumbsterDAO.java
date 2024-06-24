@@ -12,11 +12,25 @@ import java.util.List;
 import java.util.Optional;
 
 public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
+
     @Override
     public List<RubbleDumpster> findAll(RubbleDumpsterStatus status) {
-        return List.of();
-    }
+            String rubbleDumpsterStatus = status.toString();
+            String sql = "SELECT * from RubbleDumpster where status=?";
+            List<RubbleDumpster> rubbleDumpsters= new ArrayList<>();
 
+            try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+                stmt.setString(1, rubbleDumpsterStatus);
+                ResultSet rs = stmt.executeQuery();
+                while(rs.next()) {
+                    RubbleDumpster rubbleDumpster = resultSetToEntity(rs);
+                    rubbleDumpsters.add(rubbleDumpster);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return rubbleDumpsters;
+    }
 
     @Override
     public Optional<RubbleDumpster> findById(Integer id) {

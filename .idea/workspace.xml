@@ -8,7 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste" beforeDir="false" afterPath="$PROJECT_DIR$/Teste" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Teste/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Teste/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
     </list>
+    <list id="b5ee5654-26e2-49d5-b00b-39084b393638" name="Changes by waleska.ziviani_altb" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -314,7 +317,7 @@
       <workItem from="1718830797334" duration="6521000" />
       <workItem from="1718838678854" duration="8762000" />
       <workItem from="1719150441662" duration="10216000" />
-      <workItem from="1719265376824" duration="1735000" />
+      <workItem from="1719265376824" duration="4710000" />
     </task>
     <servers />
   </component>
