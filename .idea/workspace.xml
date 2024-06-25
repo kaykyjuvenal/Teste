@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="Atualização">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRentalDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ab0a2f3-6fcf-43c2-9590-1a136d74dbf0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ab0a2f3-6fcf-43c2-9590-1a136d74dbf0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumpRents.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entry_exit_report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/entry_exit_report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/income_report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/income_report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Rental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EndRentalUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/useCases/rental/EndRentalUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/inMemory/InMemoryRubbleDumpsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/inMemory/InMemoryRubbleDumpsterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/DatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClientDAO.java" afterDir="false" />
+    </list>
+    <list id="8c226290-49e5-4b16-b035-b1a03d5f5adc" name="Changes by waleska.ziviani_altb" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/DatabaseBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/DatabaseBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +55,16 @@
     &quot;accountId&quot;: &quot;7bf51917-b654-469d-8ca1-644e406b4f1f&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/DatabaseBuilder.java">
+      <ranges>
+        <range start1="51" end1="52" start2="51" end2="52" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="67" end1="71" start2="67" end2="71" changelist="7459f504-56c8-4d75-83ba-c76edddc68e7" />
+        <range start1="77" end1="78" start2="77" end2="78" changelist="8c226290-49e5-4b16-b035-b1a03d5f5adc" />
+        <range start1="79" end1="80" start2="79" end2="80" changelist="8c226290-49e5-4b16-b035-b1a03d5f5adc" />
+      </ranges>
+    </file>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -319,7 +343,7 @@
       <workItem from="1718830797334" duration="6521000" />
       <workItem from="1718838678854" duration="8762000" />
       <workItem from="1719150441662" duration="10216000" />
-      <workItem from="1719265376824" duration="4877000" />
+      <workItem from="1719265376824" duration="15131000" />
     </task>
     <task id="LOCAL-00001" summary="Atualização">
       <option name="closed" value="true" />
@@ -371,9 +395,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClientDAO.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="persistence.utils.EntityAlreadyExistsException" package="persistence.utils" />

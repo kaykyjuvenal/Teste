@@ -83,7 +83,7 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
     }
     @Override
     public Integer create(RubbleDumpster rubbleDumpster) {
-        String sql = "INSERT INTO RubbleDumpster (serialNumber, minAmountm,MonthlyAmount,rubbleDumpsterStatus) VALUES (?, ?,?,?)";
+        String sql = "INSERT INTO RubbleDumpster (serialNumber, minAmountm,MonthlyAmount,rubbleDumpsterStatus) VALUES (?,?,?,?)";
 
 
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {

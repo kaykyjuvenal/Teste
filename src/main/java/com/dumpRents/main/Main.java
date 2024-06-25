@@ -61,7 +61,6 @@ public class Main {
         }
 
 
-
         //Startando CLIENT
         Cpf cpf = new Cpf("39501888860");
         Phone phone1 = new Phone("16994580485");
@@ -73,6 +72,7 @@ public class Main {
         emails.add(email);
         Client client = new Client("Kayky", address, cpf, phone2, phone1, emails, 1);
         Client client2 = new Client("Pedro", address, cpf, phone3, phone4, emails, 2);
+
 
         RubbleDumpster rubbleDumpster = new RubbleDumpster(1, 50.0, 300.0, RubbleDumpsterStatus.DISABLED);
         RubbleDumpster rubbleDumpster1 = new RubbleDumpster(2, 60.0, 200.0, RubbleDumpsterStatus.DISABLED);
@@ -177,6 +177,7 @@ public class Main {
                 .toList();
         exportCSVUseCase.export(incomeCsvFileName, incomeHeaders, incomeData);
     }
+
 
     private static void setupDatabase() {
         DatabaseBuilder  dbBuilder = new DatabaseBuilder();

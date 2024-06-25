@@ -28,6 +28,13 @@ public class InMemoryRubbleDumpsterDAO implements RubbleDumpsterDAO {
     }
 
     @Override
+    public Optional<RubbleDumpster> findOneBySerialNumber(int serialNumber) {
+        return db.values().stream()
+                .filter(rubbleDumpster -> rubbleDumpster.getSerialNumber().equals(serialNumber))
+                .findAny();
+    }
+
+    @Override
     public Integer create(RubbleDumpster rubbleDumpster) {
         idcounter ++;
         rubbleDumpster.setId(idcounter);

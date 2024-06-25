@@ -2,7 +2,6 @@
 package com.dumpRents.repository.sqlite;
 
 import com.dumpRents.model.entities.Client;
-import com.dumpRents.model.entities.RubbleDumpster;
 import com.dumpRents.model.entities.valueObjects.*;
 import com.dumpRents.persistence.dao.ClientDAO;
 
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class SQLiteClienteDAO implements ClientDAO {
+public class SQLiteClientDAO implements ClientDAO {
 
     @Override
     public Integer create(Client client) {
@@ -47,7 +46,7 @@ public class SQLiteClienteDAO implements ClientDAO {
     @Override
     public Optional<Client> findByCpf(Cpf cpf) {
 
-        String sql = "SELECT * from Cliente where cpf = ?";
+        String sql = "SELECT * from Client where cpf = ?";
         Client client= null;
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setString(1,cpf.toString());
@@ -64,7 +63,7 @@ public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public Optional<Client> findByName(String name) {
-        String sql = "SELECT * from Cliente where name = ?";
+        String sql = "SELECT * from Client where name = ?";
         Client client= null;
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setString(1,name);
@@ -80,7 +79,7 @@ public class SQLiteClienteDAO implements ClientDAO {
 
     @Override
     public Optional<Client> findOne(Integer key) {
-        String sql = "SELECT * from Cliente where id = ?";
+        String sql = "SELECT * from Client where id = ?";
         Client client= null;
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
             stmt.setInt(1,key);
