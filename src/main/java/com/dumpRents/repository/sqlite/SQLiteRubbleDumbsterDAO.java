@@ -77,13 +77,12 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
                 rs.getInt("serialNumber"),
                 monthlyAmount,
                 minAmount,
-                RubbleDumpsterStatus.toEnum(rs.getString("rubbleDumpsterStatus")),
-                rs.getInt("ID")
+                RubbleDumpsterStatus.toEnum(rs.getString("rubbleDumpsterStatus"))
         );
     }
     @Override
     public Integer create(RubbleDumpster rubbleDumpster) {
-        String sql = "INSERT INTO RubbleDumpster (serialNumber, minAmountm,MonthlyAmount,rubbleDumpsterStatus) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO RubbleDumpster (serialNumber, minAmount,MonthlyAmount,rubbleDumpsterStatus) VALUES (?,?,?,?)";
 
 
         try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {

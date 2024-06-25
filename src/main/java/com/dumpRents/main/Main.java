@@ -17,7 +17,7 @@ import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
 import com.dumpRents.repository.inMemory.InMemoryClientDAO;
 import com.dumpRents.repository.inMemory.InMemoryRentalDAO;
 import com.dumpRents.repository.inMemory.InMemoryRubbleDumpsterDAO;
-import com.dumpRents.repository.sqlite.DatabaseBuilder;
+import com.dumpRents.repository.sqlite.*;
 import com.dumpRents.repository.sqlite.DatabaseBuilder;
 
 
@@ -122,6 +122,47 @@ public class Main {
         System.out.println(client.toString());
         System.out.println(client2.toString());
 
+        SQLiteClientDAO clientDAO = new SQLiteClientDAO();
+        clientDAO.create(client);
+        clientDAO.create(client2);
+
+
+        System.out.println("TesteBanco - Client");
+        Optional<Client> cliente4 = clientDAO.findOne(1);
+        List<Client> clients = clientDAO.findAll();
+        for (Client cliente : clients) {
+            System.out.println(cliente);
+        }
+
+        System.out.println(cliente4.get());
+        client2.setName("Pedro2");
+        clientDAO.update(client2);
+        Optional<Client> cliente2Novo = clientDAO.findByCpf(new Cpf("39501888860"));
+        System.out.println(cliente2Novo.get());
+        Optional<Client> thiagoBarbosa = clientDAO.findByName("Thiago Barbosa");
+        System.out.println(thiagoBarbosa.get());
+        clientDAO.deleteByKey(62);
+        Optional<Client> client63 = clientDAO.findOne(62);
+        if (client63.isEmpty()) {
+            System.out.println("Vazio");
+        }
+        SQLiteRubbleDumbsterDAO rubbleDAO = new SQLiteRubbleDumbsterDAO();
+
+        rubbleDAO.create(rubbleDumpster1);
+        Optional<RubbleDumpster> verifica = rubbleDAO.findOneBySerialNumber(2);
+        System.out.println(verifica.get());
+        rubbleDumpster1.setStatus(RubbleDumpsterStatus.toEnum("AVAILABLE"));
+        System.out.println(rubbleDumpster1);
+
+        List<RubbleDumpster> rubbleDumpsters = rubbleDAO.findAll();
+        for (RubbleDumpster rubble : rubbleDumpsters) {
+            System.out.println(rubble.toString());
+        }
+
+        SQLiteRentalDAO rentalDAO = new SQLiteRentalDAO();
+
+
+
         //TESTE CLIENT
         insertClientUseCase.insert(client);
 
@@ -142,42 +183,7 @@ public class Main {
         endRentalUseCase.endRental(rental1.getId());
         System.out.println(findRentalUseCase.findOne(rental1.getId()).toString());
 
-        EntryExitReportUseCase.EntryExitReport entryExitReport = entryExitReportUseCase.generateReport(LocalDate.MIN, LocalDate.MAX);
-        for (Report report : entryExitReport.reports()) {
-            System.out.println(report);
-        }
-
-        IncomeReportUseCase.IncomeReport incomeReport = incomeReportUseCase.generateReport(LocalDate.MIN, LocalDate.MAX);
-        for (Report report : incomeReport.reports()) {
-            System.out.println(report);
-        }
-
-        String entryExitCsvFileName = "entry_exit_report.csv";
-        String[] entryExitHeaders = {"Serial Number", "Client Name", "Initial Date", "Withdrawal Date", "Final Amount"};
-        List<String[]> entryExitData = entryExitReport.reports().stream()
-                .map(report -> new String[]{
-                        report.serialNumber(),
-                        report.clientName() != null ? report.clientName() : "",
-                        report.initialDate() != null ? report.initialDate().toString() : "",
-                        report.withdrawalDate() != null ? report.withdrawalDate().toString() : "",
-                        report.finalAmount() != null ? report.finalAmount().toString() : ""
-                })
-                .toList();
-        exportCSVUseCase.export(entryExitCsvFileName, entryExitHeaders, entryExitData);
-
-        String incomeCsvFileName = "income_report.csv";
-        String[] incomeHeaders = {"Serial Number", "Client Name", "Initial Date", "Withdrawal Date", "Final Amount"};
-        List<String[]> incomeData = incomeReport.reports().stream()
-                .map(report -> new String[]{
-                        report.serialNumber(),
-                        report.initialDate() != null ? report.initialDate().toString() : "",
-                        report.withdrawalDate() != null ? report.withdrawalDate().toString() : "",
-                        report.finalAmount() != null ? report.finalAmount().toString() : ""
-                })
-                .toList();
-        exportCSVUseCase.export(incomeCsvFileName, incomeHeaders, incomeData);
     }
-
 
     private static void setupDatabase() {
         DatabaseBuilder  dbBuilder = new DatabaseBuilder();

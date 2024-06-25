@@ -95,8 +95,8 @@ public class Rental {
         this.rentalStatus = rentalStatus;
     }
 
-    public void setWithdrawalRequestDate(LocalDate withdrawalRequestDateDate) {
-        this.withdrawalRequestDate = withdrawalRequestDateDate;
+    public void setWithdrawalRequestDate(LocalDate withdrawalRequestDate) {
+        this.withdrawalRequestDate = withdrawalRequestDate;
     }
 
     public void setWithdrawalDate(LocalDate withdrawalDate) {
