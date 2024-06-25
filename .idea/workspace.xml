@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="Atualização">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ab0a2f3-6fcf-43c2-9590-1a136d74dbf0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ab0a2f3-6fcf-43c2-9590-1a136d74dbf0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumpRents.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpsterStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/model/entities/RubbleDumpsterStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
-    </list>
+    <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="Atualização" />
     <list id="8c226290-49e5-4b16-b035-b1a03d5f5adc" name="Changes by waleska.ziviani_altb" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +335,7 @@
       <workItem from="1718838678854" duration="8762000" />
       <workItem from="1719150441662" duration="10216000" />
       <workItem from="1719265376824" duration="15259000" />
-      <workItem from="1719348145520" duration="6473000" />
+      <workItem from="1719348145520" duration="6786000" />
     </task>
     <task id="LOCAL-00001" summary="Atualização">
       <option name="closed" value="true" />

@@ -161,6 +161,9 @@ public class Main {
 
         SQLiteRentalDAO rentalDAO = new SQLiteRentalDAO();
 
+        rentalDAO.create(rental);
+        List<Rental> rentals = rentalDAO.findAll();
+
 
 
         //TESTE CLIENT
