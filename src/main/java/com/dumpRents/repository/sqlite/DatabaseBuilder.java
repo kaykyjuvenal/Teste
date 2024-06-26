@@ -64,10 +64,10 @@ public class DatabaseBuilder {
         String SQL =  """
                 CREATE TABLE Rental (
                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                   initialDate DATE NOT NULL,
-                   withdrawalRequestDate DATE,
-                   withdrawalDate DATE,
-                   endDate DATE,
+                   initialDate TEXT NOT NULL,
+                   withdrawalRequestDate TEXT,
+                   withdrawalDate TEXT,
+                   endDate TEXT,
                    finalAmount INTEGER,
                    rentalStatus TEXT NOT NULL,
                    street TEXT NOT NULL,

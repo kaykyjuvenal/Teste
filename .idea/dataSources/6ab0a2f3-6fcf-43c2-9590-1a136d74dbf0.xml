@@ -446,7 +446,7 @@
     </routine>
     <schema id="177" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-06-25.22:29:44</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-26.02:09:14</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="178" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1541,20 +1541,20 @@
       <Position>1</Position>
     </column>
     <column id="536" parent="519" name="initialDate">
-      <DasType>DATE|0s</DasType>
+      <DasType>TEXT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="537" parent="519" name="withdrawalRequestDate">
-      <DasType>DATE|0s</DasType>
+      <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="538" parent="519" name="withdrawalDate">
-      <DasType>DATE|0s</DasType>
+      <DasType>TEXT|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="539" parent="519" name="endDate">
-      <DasType>DATE|0s</DasType>
+      <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
     <column id="540" parent="519" name="finalAmount">

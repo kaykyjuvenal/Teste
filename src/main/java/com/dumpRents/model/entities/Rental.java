@@ -34,7 +34,7 @@ public class Rental {
         this.rentalStatus = RentalStatus.OPEN;
     }
 
-    public Rental(LocalDate initialDate, LocalDate withdrawalRequestDate, LocalDate withdrawalDate, LocalDate endDate, Double finalAmount, Enum<RentalStatus> rentalStatus, Client client, Address address, RubbleDumpster rubbleDumpster) {
+    public Rental(LocalDate initialDate, LocalDate withdrawalRequestDate, LocalDate withdrawalDate, LocalDate endDate, Double finalAmount, Enum<RentalStatus> rentalStatus, Client client, Address address, RubbleDumpster rubbleDumpster,Integer id) {
         this.initialDate = initialDate;
         this.withdrawalRequestDate = withdrawalRequestDate;
         this.withdrawalDate = withdrawalDate;
@@ -44,13 +44,50 @@ public class Rental {
         this.client = client;
         this.address = address;
         this.rubbleDumpster = rubbleDumpster;
+        this.id = id;
+    }
+
+    public void setFinalAmount(Double finalAmount) {
+        this.finalAmount = finalAmount;
+    }
+
+    public Rental(LocalDate initialDate, Enum<RentalStatus> rentalStatus, Address address, Client client, RubbleDumpster rubbleDumpster) {
+        this.initialDate = initialDate;
+        this.rentalStatus = rentalStatus;
+        this.address = address;
+        this.client = client;
+        this.rubbleDumpster = rubbleDumpster;
+    }
+    public Rental(LocalDate initialDate, Enum<RentalStatus> rentalStatus, Address address, Client client, RubbleDumpster rubbleDumpster, Integer id) {
+        this.initialDate = initialDate;
+        this.rentalStatus = rentalStatus;
+        this.address = address;
+        this.client = client;
+        this.rubbleDumpster = rubbleDumpster;
+        this.id = id;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public Rental(LocalDate initialDate, RentalStatus rentalStatus, Client client, Address address, RubbleDumpster rubbleDumpster) {
+
     }
 
     @Override
     public String toString() {
         return "Rental{" +
-                "id=" + id +
+                "id=" + getId() +
+                ", initialDate=" + initialDate +
+                ", withdrawalRequestDate=" + withdrawalRequestDate +
+                ", withdrawalDate=" + withdrawalDate +
+                ", endDate=" + endDate +
+                ", finalAmount=" + finalAmount +
                 ", rentalStatus=" + rentalStatus +
+                ", address=" + address +
+                ", client=" + client +
+                ", rubbleDumpster=" + rubbleDumpster +
                 '}';
     }
 
@@ -95,12 +132,15 @@ public class Rental {
         this.rentalStatus = rentalStatus;
     }
 
+    public LocalDate getWithdrawalRequestDate() {
+        return withdrawalRequestDate;
+    }
+
     public void setWithdrawalRequestDate(LocalDate withdrawalRequestDate) {
         this.withdrawalRequestDate = withdrawalRequestDate;
     }
 
-    public void setWithdrawalDate(LocalDate withdrawalDate) {
-        this.withdrawalDate = withdrawalDate;
+    public void setWithdrawalDate(LocalDate withdrawalDate) {this.withdrawalDate = withdrawalDate;
     }
 
     public Enum<RentalStatus> getRentalStatus() {

@@ -77,8 +77,9 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
                 rs.getInt("serialNumber"),
                 monthlyAmount,
                 minAmount,
-                RubbleDumpsterStatus.toEnum(rs.getString("rubbleDumpsterStatus"))
-        );
+                RubbleDumpsterStatus.toEnum(rs.getString("rubbleDumpsterStatus")),
+                rs.getInt("ID"));
+
     }
     @Override
     public Integer create(RubbleDumpster rubbleDumpster) {

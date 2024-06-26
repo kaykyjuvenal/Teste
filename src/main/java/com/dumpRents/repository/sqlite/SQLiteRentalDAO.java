@@ -45,16 +45,16 @@ public class  SQLiteRentalDAO implements RentalDAO {
 
         String sql = "INSERT INTO Rental(initialDate,rentalStatus,street,district,number,city,cep,id_Client,id_RubbleDumpster) VALUES (?,?,?,?,?,?,?,?,?)";
 
-        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
-            stmt.setDate(1, Date.valueOf(rental.getInitialDate()));
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, rental.getInitialDate().toString());
             stmt.setString(2, rental.getRentalStatus().toString());
             stmt.setString(3, rental.getAddress().getStreet());
             stmt.setString(4, rental.getAddress().getDistrict());
             stmt.setString(5, rental.getAddress().getNumber());
             stmt.setString(6, rental.getAddress().getCity());
             stmt.setString(7, rental.getAddress().getCep().toString());
-            stmt.setInt(8,rental.getClient().getId());
-            stmt.setInt(9,rental.getRubbleDumpster().getId());
+            stmt.setInt(8, rental.getClient().getId());
+            stmt.setInt(9, rental.getRubbleDumpster().getId());
             stmt.execute();
 
             ResultSet rs = stmt.getGeneratedKeys();
@@ -67,29 +67,28 @@ public class  SQLiteRentalDAO implements RentalDAO {
         return null;
     }
 
-    private Rental resultSetToRental(ResultSet rs) throws SQLException{
+    private Rental resultSetToRental(ResultSet rs) throws SQLException {
         SQLiteRubbleDumbsterDAO dumbsterDAO = new SQLiteRubbleDumbsterDAO();
         SQLiteClientDAO clientDAO = new SQLiteClientDAO();
 
-        Client client = clientDAO.findOne(rs.getInt("id_Client")).get();
-        RubbleDumpster rubbleDumpster = dumbsterDAO.findById(rs.getInt("id_RubbleDumpster")).get();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-             return new Rental(
-                     LocalDate.parse(rs.getString("initialDate")),
-                     LocalDate.parse(rs.getString("withdrawalRequestDate")),
-                     LocalDate.parse(rs.getString("withdrawalDate")),
-                     LocalDate.parse(rs.getString("endDate")),
-                     (double) rs.getInt("finalAmount"),
-                     RentalStatus.toEnum(rs.getString("rentalStatus")),
-                     client
-                     ,
-                     new Address(rs.getString("street"),
-                             rs.getString("district"),
-                             rs.getString("number"),
-                             rs.getString("city"),
-                             new Cep(rs.getString("cep"))),
-                     rubbleDumpster);
+
+        Optional<Client> client = clientDAO.findOne(rs.getInt("id_Client"));
+        Optional<RubbleDumpster> rubbleDumpster = dumbsterDAO.findById(rs.getInt("id_RubbleDumpster"));
+
+        return new Rental(LocalDate.parse(rs.getString("initialDate")),
+                RentalStatus.toEnum(rs.getString("rentalStatus")),
+                new Address(rs.getString("street"),
+                        rs.getString("district"),
+                        rs.getString("number"),
+                        rs.getString("city"),
+                        new Cep(rs.getString("cep"))),
+                client.get(),
+                rubbleDumpster.get(),rs.getInt("ID"));
+
     }
+
 
     @Override
     public Optional<Rental> findOne(Integer key) {

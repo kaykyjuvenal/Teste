@@ -160,9 +160,17 @@ public class Main {
         }
 
         SQLiteRentalDAO rentalDAO = new SQLiteRentalDAO();
+        System.out.println("RENTAL TESTE");
 
-        rentalDAO.create(rental);
+        Rental rental2 = new Rental(rubbleDAO.findOne(1).get(), clientDAO.findOne(2).get(), LocalDate.now(),address);
+        System.out.println(rental2);
+        rentalDAO.create(rental2);
+        Optional<Rental> rental4 = rentalDAO.findOne(22);
+        System.out.println(rental4.get());
         List<Rental> rentals = rentalDAO.findAll();
+        for(Rental r :rentals ){
+            System.out.println(r);
+        }
 
 
 

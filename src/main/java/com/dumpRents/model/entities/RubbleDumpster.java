@@ -108,8 +108,8 @@ public class RubbleDumpster {
         this.setMonthlyAmount(monthlyAmount);
 
     }
-    public void activateNewRubbleDumbster(){
-        this.setStatus(AVAILABLE);
+    public void activate(){
+        this.status = AVAILABLE;
     }
 }
 
