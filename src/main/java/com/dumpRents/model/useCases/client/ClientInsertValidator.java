@@ -4,7 +4,7 @@ import com.dumpRents.model.Notification;
 import com.dumpRents.model.Validator;
 import com.dumpRents.model.entities.Client;
 
-public class ClientInsertValidator extends Validator<Client> {
+public class ClientInsertValidator extends Validator<Client>{
 
     @Override
     public Notification validate(Client client) {

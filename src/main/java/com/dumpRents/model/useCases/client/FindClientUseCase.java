@@ -4,7 +4,6 @@ import com.dumpRents.model.Validator;
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.valueObjects.Cpf;
 import com.dumpRents.persistence.dao.ClientDAO;
-import com.dumpRents.persistence.utils.EntityAlreadyExistsException;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,8 +24,6 @@ public class FindClientUseCase {
     }
 
     public Optional<Client> findClientByCpf(Cpf cpf) {
-        if (Validator.nullOrEmpty((Collection) cpf))
-            throw new IllegalArgumentException("CPF cannot be null or empty");
         return clientDAO.findByCpf(cpf);
     }
 

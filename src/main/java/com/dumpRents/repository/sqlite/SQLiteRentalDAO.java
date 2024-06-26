@@ -127,20 +127,28 @@ public class  SQLiteRentalDAO implements RentalDAO {
         Optional<Client> client = clientDAO.findOne(rs.getInt("id_Client"));
         Optional<RubbleDumpster> rubbleDumpster = dumbsterDAO.findById(rs.getInt("id_RubbleDumpster"));
 
-        String withdrawalRequestDate =  rs.getString("withdrawalRequestDate");
-        String  withdrawalDate = rs.getString("withdrawalDate");
-        String endDate = rs.getString("endDate");
 
 
-        return  new Rental(LocalDate.parse(rs.getString("initialDate")),
-                RentalStatus.toEnum(rs.getString("rentalStatus")),
+        Rental rental = new Rental(rubbleDumpster.get(),client.get(),LocalDate.parse(rs.getString("initialDate")),
                 new Address(rs.getString("street"),
                         rs.getString("district"),
                         rs.getString("number"),
                         rs.getString("city"),
-                        new Cep(rs.getString("cep"))),
-                client.get(),
-                rubbleDumpster.get(),rs.getInt("ID"));
+                        new Cep(rs.getString("cep"))));
+        rental.setId(rs.getInt("ID"));
+        String withdrawalRequestDate =  rs.getString("withdrawalRequestDate");
+        if(withdrawalRequestDate != null) {
+            rental.setWithdrawalRequestDate(LocalDate.parse(withdrawalRequestDate));
+        }
+        String  withdrawalDate = rs.getString("withdrawalDate");
+        if(withdrawalDate != null) {
+            rental.setWithdrawalDate(LocalDate.parse(withdrawalDate));
+        }
+        String endDate = rs.getString("endDate");
+        if(endDate != null) {
+            rental.setEndDate(LocalDate.parse(endDate));
+        }
+        return rental;
     }
 
 
@@ -178,7 +186,7 @@ public class  SQLiteRentalDAO implements RentalDAO {
 
     @Override
     public boolean update(Rental rental) {
-    String sql = "UPDATE Rental set initialDate = ?, withdrawalRequestDate = ?, withdrawalDate = ?, endDate = ?" +
+    String sql = "UPDATE Rental set initialDate = ?, withdrawalRequestDate = ?, withdrawalDate = ?, endDate = ?," +
             "finalAmount = ?, rentalStatus = ?, street = ?, district = ?, number = ?, city = ?," +
             " cep = ?, id_Client = ?, id_RubbleDumpster = ? WHERE id = ?";
 

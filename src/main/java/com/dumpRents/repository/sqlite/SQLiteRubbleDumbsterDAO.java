@@ -16,7 +16,7 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
     @Override
     public List<RubbleDumpster> findAll(RubbleDumpsterStatus status) {
             String rubbleDumpsterStatus = status.toString();
-            String sql = "SELECT * from RubbleDumpster where status=?";
+            String sql = "SELECT * from RubbleDumpster where rubbleDumpsterStatus=?";
             List<RubbleDumpster> rubbleDumpsters= new ArrayList<>();
 
             try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
@@ -75,8 +75,8 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
 
         return new RubbleDumpster(
                 rs.getInt("serialNumber"),
-                monthlyAmount,
                 minAmount,
+                monthlyAmount,
                 RubbleDumpsterStatus.toEnum(rs.getString("rubbleDumpsterStatus")),
                 rs.getInt("ID"));
 
@@ -140,7 +140,7 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
 
     @Override
     public boolean update(RubbleDumpster rubbleDumpster) {
-        String sql = "Update RubbleDumpster set serialNumber = ? , minAmount = ?, "+
+        String sql = "Update RubbleDumpster set serialNumber = ? , minAmount = ?,"+
                 "MonthlyAmount = ? ,rubbleDumpsterStatus = ? where id = ?";
 
 

@@ -2,14 +2,14 @@ package com.dumpRents.model.useCases.rental;
 
 import com.dumpRents.model.Notification;
 import com.dumpRents.model.Validator;
-import com.dumpRents.model.useCases.rubbleDumpster.FindRubbleDumpsterUseCase;
 import com.dumpRents.model.entities.*;
+import com.dumpRents.model.entities.valueObjects.Address;
 import com.dumpRents.model.useCases.client.FindClientUseCase;
+import com.dumpRents.model.useCases.rubbleDumpster.FindRubbleDumpsterUseCase;
 import com.dumpRents.persistence.dao.ClientDAO;
 import com.dumpRents.persistence.dao.RentalDAO;
 import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
 import com.dumpRents.persistence.utils.EntityNotFoundException;
-
 
 import java.time.LocalDate;
 
@@ -31,7 +31,7 @@ public class InsertRentalUseCase {
         this.rubbleDumpsterDAO = rubbleDumpsterDAO;
     }
 
-    public Rental insertRental(Integer clientId) {
+    public Rental insertRental(Integer clientId, Address address) {
         if (clientId == null) {
             throw new IllegalArgumentException("Client ID is null.");
         }
@@ -39,8 +39,7 @@ public class InsertRentalUseCase {
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Client with id " + clientId));
 
         RubbleDumpster rubbleDumpster = findRubbleDumpsterUseCase.findAll(RubbleDumpsterStatus.AVAILABLE).getFirst();
-        Rental rental = new Rental(rubbleDumpster, client, LocalDate.now());
-        rental.setRentalStatus(RentalStatus.OPEN);
+        Rental rental = new Rental(rubbleDumpster, client, LocalDate.now(),address);
 
         Validator<Rental> validator = new RentalInsertValidator();
         Notification notification = validator.validate(rental);

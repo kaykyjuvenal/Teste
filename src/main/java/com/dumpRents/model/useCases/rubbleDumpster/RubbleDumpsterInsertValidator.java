@@ -1,4 +1,3 @@
-
 package com.dumpRents.model.useCases.rubbleDumpster;
 
 import com.dumpRents.model.Notification;
@@ -28,4 +27,3 @@ public class RubbleDumpsterInsertValidator extends Validator<RubbleDumpster> {
         return notification;
     }
 }
-

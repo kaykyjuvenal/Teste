@@ -1,13 +1,12 @@
 package com.dumpRents.model.useCases.rental;
 
+import com.dumpRents.model.entities.Rental;
+import com.dumpRents.model.entities.RubbleDumpster;
+import com.dumpRents.model.entities.RubbleDumpsterStatus;
 import com.dumpRents.model.useCases.rubbleDumpster.FindRubbleDumpsterUseCase;
-import com.dumpRents.model.entities.*;
-import com.dumpRents.persistence.dao.ClientDAO;
 import com.dumpRents.persistence.dao.RentalDAO;
 import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
 import com.dumpRents.persistence.utils.EntityNotFoundException;
-
-import java.time.LocalDate;
 
 public class EndRentalUseCase {
     private RentalDAO rentalDAO;
@@ -30,14 +29,12 @@ public class EndRentalUseCase {
         Rental rental = rentalDAO.findOne(rentalId)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Rental for ID " + rentalId));
 
-
+        rental.endRental();
 
         Integer serialNumber = rental.getRubbleDumpster().getSerialNumber();
         RubbleDumpster rubbleDumpster = findRubbleDumpsterUseCase.findOne(serialNumber).get();
 
-        rental.setRentalStatus(RentalStatus.CLOSED);
         rubbleDumpster.setStatus(RubbleDumpsterStatus.AVAILABLE);
-
 
         rentalDAO.update(rental);
         rubbleDumpsterDAO.update(rubbleDumpster);

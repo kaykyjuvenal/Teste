@@ -1,4 +1,3 @@
-
 package com.dumpRents.model.useCases.rubbleDumpster;
 
 import com.dumpRents.model.Notification;
@@ -8,7 +7,7 @@ import com.dumpRents.model.entities.RubbleDumpsterStatus;
 import com.dumpRents.persistence.dao.RubbleDumpsterDAO;
 import com.dumpRents.persistence.utils.EntityAlreadyExistsException;
 
-
+import java.time.LocalDate;
 
 public class InactivateRubbleDumpsterUseCase {
     private RubbleDumpsterDAO rubbleDumpsterDAO;
@@ -27,14 +26,13 @@ public class InactivateRubbleDumpsterUseCase {
 
         Integer serialNumber = rubbleDumpster.getSerialNumber();
 
-        if (rubbleDumpsterDAO.findOne(serialNumber).isEmpty())
+        if (rubbleDumpsterDAO.findOneBySerialNumber(serialNumber).isEmpty())
             throw new EntityAlreadyExistsException("Caçamba não localizada ou fora das condições necessárias para inativação!");
         if  (rubbleDumpster.getStatus() != RubbleDumpsterStatus.AVAILABLE)
-            throw new IllegalArgumentException("Campo invalido");
+            throw new IllegalArgumentException("Caçamba não disponivel");
 
         rubbleDumpster.inactivateRubbleDumpster();
 
         return rubbleDumpsterDAO.update(rubbleDumpster);
     }
 }
-

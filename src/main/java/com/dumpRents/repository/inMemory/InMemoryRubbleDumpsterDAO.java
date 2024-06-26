@@ -22,17 +22,9 @@ public class InMemoryRubbleDumpsterDAO implements RubbleDumpsterDAO {
 
     @Override
     public Optional<RubbleDumpster> findById(Integer id) {
-        if (db.containsKey(id))
-            return Optional.of(db.get(id));
         return Optional.empty();
     }
 
-    @Override
-    public Optional<RubbleDumpster> findOneBySerialNumber(int serialNumber) {
-        return db.values().stream()
-                .filter(rubbleDumpster -> rubbleDumpster.getSerialNumber().equals(serialNumber))
-                .findAny();
-    }
 
     @Override
     public Integer create(RubbleDumpster rubbleDumpster) {
@@ -49,7 +41,8 @@ public class InMemoryRubbleDumpsterDAO implements RubbleDumpsterDAO {
         return Optional.empty();
     }
 
-    public Optional<RubbleDumpster> findOneBySerialNumber(Integer serialNumber) {
+    @Override
+    public Optional<RubbleDumpster> findOneBySerialNumber(int serialNumber) {
         return db.values().stream()
                 .filter(rubbleDumpster -> rubbleDumpster.getSerialNumber().equals(serialNumber))
                 .findAny();

@@ -3,7 +3,6 @@ package com.dumpRents.persistence.dao;
 import com.dumpRents.model.entities.Client;
 import com.dumpRents.model.entities.valueObjects.Cpf;
 import com.dumpRents.persistence.utils.DAO;
-import com.dumpRents.persistence.utils.DAO;
 
 import java.util.Optional;
 

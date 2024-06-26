@@ -17,6 +17,19 @@ public class Client {
     private Phone phone2;
     private List<Email> emailList = new ArrayList<Email>();
 
+
+    public Client(String name, Address address, Cpf cpf, Phone phone2, Phone phone1, List<Email> emailList, Integer id) {
+        this.name = name;
+        this.address = address;
+        this.cpf = cpf;
+        this.phone2 = phone2;
+        this.phone1 = phone1;
+        this.emailList = emailList;
+        this.id = id;
+    }
+
+    public Client() {}
+
     public Integer getId() {
         return id;
     }
@@ -65,25 +78,8 @@ public class Client {
         this.phone2 = phone2;
     }
 
-    public Client(String name, Address address, Cpf cpf, Phone phone2, Phone phone1, List<Email> emailList, Integer id) {
-        this.name = name;
-        this.address = address;
-        this.cpf = cpf;
-        this.phone2 = phone2;
-        this.phone1 = phone1;
-        this.emailList = emailList;
-        this.id = id;
-    }
-
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public void addEmail(Email email) {
-        emailList.add(email);
-    }
-    public void removeEmail(Email email) {
-        emailList.remove(email);
     }
 
     public void setEmailList(List<Email> emailList) {

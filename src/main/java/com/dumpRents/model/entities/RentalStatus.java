@@ -19,5 +19,8 @@ public enum RentalStatus {
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-
+    @Override
+    public String toString() {
+        return label;
+    }
 }

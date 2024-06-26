@@ -13,6 +13,10 @@ public class Address {
         this.number = number;
         this.city = city;
         this.cep = cep;
+
+        if (!isValid()){
+            throw new IllegalArgumentException("Invalid Address");
+        }
     }
 
     public boolean isValid() {
@@ -27,15 +31,20 @@ public class Address {
         return field != null && !field.trim().isEmpty();
     }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "street='" + street + '\'' +
-                ", district='" + district + '\'' +
-                ", number='" + number + '\'' +
-                ", city='" + city + '\'' +
-                ", cep=" + cep +
-                '}';
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
     public String getNumber() {
@@ -62,19 +71,12 @@ public class Address {
         this.cep = cep;
     }
 
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
+    @Override
+    public String toString() {
+        return "Rua: '" + street + '\'' +
+                ", Bairro: '" + district + '\'' +
+                ", Número: '" + number + '\'' +
+                ", Cidade: '" + city + '\'' +
+                ", CEP: " + cep;
     }
 }
