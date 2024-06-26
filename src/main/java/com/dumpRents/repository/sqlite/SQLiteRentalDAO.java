@@ -77,7 +77,12 @@ public class  SQLiteRentalDAO implements RentalDAO {
         Optional<Client> client = clientDAO.findOne(rs.getInt("id_Client"));
         Optional<RubbleDumpster> rubbleDumpster = dumbsterDAO.findById(rs.getInt("id_RubbleDumpster"));
 
-        return new Rental(LocalDate.parse(rs.getString("initialDate")),
+        String withdrawalRequestDate =  rs.getString("withdrawalRequestDate");
+        String  withdrawalDate = rs.getString("withdrawalDate");
+        String endDate = rs.getString("endDate");
+
+
+        return  new Rental(LocalDate.parse(rs.getString("initialDate")),
                 RentalStatus.toEnum(rs.getString("rentalStatus")),
                 new Address(rs.getString("street"),
                         rs.getString("district"),
@@ -86,7 +91,6 @@ public class  SQLiteRentalDAO implements RentalDAO {
                         new Cep(rs.getString("cep"))),
                 client.get(),
                 rubbleDumpster.get(),rs.getInt("ID"));
-
     }
 
 
