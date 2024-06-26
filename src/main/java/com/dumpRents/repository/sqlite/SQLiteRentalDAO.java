@@ -22,22 +22,72 @@ import java.util.Optional;
 public class  SQLiteRentalDAO implements RentalDAO {
     @Override
     public List<Rental> findRentalByPeriod(LocalDate initialDate, LocalDate endDate) {
-        return List.of();
+        String sql = "SELECT * from Rental where initialDate >= ? and endDate <= ?";
+        List<Rental> rentals= new ArrayList<>();
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1,initialDate.toString());
+            stmt.setString(2,endDate.toString());
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()) {
+                Rental rental = resultSetToRental(rs);
+                rentals.add(rental);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals;
     }
 
     @Override
     public List<Rental> findRentalByClient(Client client) {
-        return List.of();
+        String sql = "SELECT * from Rental where id_Client = ?";
+        List<Rental> rentals= new ArrayList<>();
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1,client.getId());
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()) {
+                Rental rental = resultSetToRental(rs);
+                rentals.add(rental);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals;
     }
 
     @Override
     public List<Rental> findRentalByRubbleDumpster(RubbleDumpster rubbleDumpster) {
-        return List.of();
+        String sql = "SELECT * from Rental where id_RubbleDumpster = ?";
+        List<Rental> rentals= new ArrayList<>();
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1,rubbleDumpster.getId());
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()) {
+                Rental rental = resultSetToRental(rs);
+                rentals.add(rental);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals;
     }
 
     @Override
     public List<Rental> findRentalByStatus(RentalStatus status) {
-        return List.of();
+
+        String sql = "SELECT * from Rental where rentalStatus = ?";
+        List<Rental> rentals= new ArrayList<>();
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1,status.toString());
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()) {
+                Rental rental = resultSetToRental(rs);
+                rentals.add(rental);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals;
     }
 
     @Override
@@ -127,17 +177,53 @@ public class  SQLiteRentalDAO implements RentalDAO {
     }
 
     @Override
-    public boolean update(Rental type) {
+    public boolean update(Rental rental) {
+    String sql = "UPDATE Rental set initialDate = ?, withdrawalRequestDate = ?, withdrawalDate = ?, endDate = ?" +
+            "finalAmount = ?, rentalStatus = ?, street = ?, district = ?, number = ?, city = ?," +
+            " cep = ?, id_Client = ?, id_RubbleDumpster = ? WHERE id = ?";
+
+        try (PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setString(1, rental.getInitialDate().toString());
+            stmt.setString(2, rental.getWithdrawalRequestDate().toString());
+            stmt.setString(3, rental.getWithdrawalDate().toString());
+            stmt.setString(4, rental.getEndDate().toString());
+            stmt.setDouble(5, rental.getFinalAmount());
+            stmt.setString(6, rental.getRentalStatus().toString());
+            stmt.setString(7, rental.getAddress().getStreet());
+            stmt.setString(8, rental.getAddress().getDistrict());
+            stmt.setString(9, rental.getAddress().getNumber());
+            stmt.setString(10, rental.getAddress().getCity());
+            stmt.setString(11, rental.getAddress().getCep().toString());
+            stmt.setInt(12, rental.getClient().getId());
+            stmt.setInt(13, rental.getRubbleDumpster().getId());
+            stmt.execute();
+
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public boolean deleteByKey(Integer key) {
+
+        String sql = "DELETE FROM Rental WHERE id = ?";
+        try(PreparedStatement stmt = ConnectionFactory.createPreparedStatement(sql)) {
+            stmt.setInt(1,key);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean delete(Rental type) {
-        return false;
+    public boolean delete(Rental rental) {
+        if(rental == null || rental.getId() == null)
+            throw new IllegalArgumentException("Rental and your id must be not null");
+        return deleteByKey(rental.getId());
     }
 }

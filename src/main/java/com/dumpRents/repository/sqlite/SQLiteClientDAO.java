@@ -171,5 +171,5 @@ public class SQLiteClientDAO implements ClientDAO {
     public boolean delete(Client client) {
         if(client == null || client.getId() == null)
             throw new IllegalArgumentException("Client and your id must be not null");
-        return false;    }
+        return deleteByKey(client.getId());  }
 }

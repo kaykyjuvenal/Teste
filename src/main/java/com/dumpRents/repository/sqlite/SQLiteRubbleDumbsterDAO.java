@@ -177,6 +177,6 @@ public class SQLiteRubbleDumbsterDAO implements RubbleDumpsterDAO {
     public boolean delete(RubbleDumpster rubbleDumpster) {
         if(rubbleDumpster == null || rubbleDumpster.getId() == null)
             throw new IllegalArgumentException("Rubble dumpster and your id must be not null");
-        return false;
+        return deleteByKey(rubbleDumpster.getId());
     }
 }
