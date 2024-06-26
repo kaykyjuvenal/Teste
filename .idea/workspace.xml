@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7459f504-56c8-4d75-83ba-c76edddc68e7" name="Changes" comment="Atualização">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteClientDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRentalDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRentalDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dumpRents/repository/sqlite/SQLiteRubbleDumbsterDAO.java" afterDir="false" />
     </list>
-    <list id="e7bfcc8e-8297-4279-a459-b58789332d64" name="Changes by Waleska Oliveira" comment="" />
     <list id="8c226290-49e5-4b16-b035-b1a03d5f5adc" name="Changes by waleska.ziviani_altb" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +259,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Application.com.dumpRents.dumpRents.main.Main" />
+      <item itemvalue="Application.com.dumpRents.main.Main (6)" />
       <item itemvalue="Application.com.dumpRents.main.Main" />
       <item itemvalue="Application.com.dumpRents.main.Main (3)" />
       <item itemvalue="Application.com.dumpRents.main.Main (4)" />
@@ -308,7 +306,8 @@
       <workItem from="1719150441662" duration="10216000" />
       <workItem from="1719265376824" duration="15259000" />
       <workItem from="1719348145520" duration="15131000" />
-      <workItem from="1719363513158" duration="6960000" />
+      <workItem from="1719363513158" duration="7267000" />
+      <workItem from="1719417064527" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Atualização">
       <option name="closed" value="true" />
